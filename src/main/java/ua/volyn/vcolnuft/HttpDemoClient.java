@@ -1,4 +1,4 @@
-package client_server_lab2;
+package ua.volyn.vcolnuft;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.core.JsonProcessingException;
