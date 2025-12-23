@@ -1,15 +1,19 @@
 package ua.volyn.vcolnuft;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import kong.unirest.core.HttpResponse;
-import kong.unirest.core.Unirest;
+// Група Jackson (відповідає за перетворення JSON <-> Java об'єкт)
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties; // Дозволяє ігнорувати зайві поля в JSON, щоб програма не падала з помилкою.
+import com.fasterxml.jackson.core.JsonProcessingException;   // Клас помилки, яка виникає, якщо JSON некоректний або його не можна обробити.
+import com.fasterxml.jackson.databind.ObjectMapper;          // Головний інструмент Jackson. Саме він виконує "магію" перетворення тексту в об'єкти.
 
-import java.io.FileWriter;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Scanner;
+// Група Unirest (відповідає за HTTP-запити в інтернет)
+import kong.unirest.core.HttpResponse; // "Конверт" відповіді від сервера (містить статус код, заголовки і самі дані).
+import kong.unirest.core.Unirest;      // Головний клас для відправки запитів (GET, POST тощо) і налаштування клієнта.
+
+// Стандартні бібліотеки Java (вбудовані)
+import java.io.FileWriter;                 // Дозволяє записувати текст у файли (використовуємо для CSV).
+import java.time.LocalDateTime;            // Робота з поточною датою та часом (без часових поясів).
+import java.time.format.DateTimeFormatter; // Дозволяє красиво форматувати дату (наприклад, перетворити дату у рядок для назви файлу).
+import java.util.Scanner;                  // Зчитує дані, які користувач вводить з клавіатури в консоль.
 
 public class HttpDemoClient {
 
